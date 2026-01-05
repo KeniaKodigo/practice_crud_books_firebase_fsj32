@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+
 
 const Container = styled.main`
     display: grid;
@@ -28,9 +30,9 @@ export default function Home() {
             </section>
             <section>
                 <Title>Discovery Your Next Great Read</Title>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, necessitatibus?</p>
+                <p style={{marginBottom: "1rem"}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, necessitatibus?</p>
 
-                <button>Ir a los Libros</button>
+                <Link to="/libro/lista" style={{color: "#fff", textDecoration: "none"}}>Ir a los Libros</Link>
             </section>
         </Container>
     )
