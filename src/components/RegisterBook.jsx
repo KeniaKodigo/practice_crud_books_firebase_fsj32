@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { addDoc, collection } from 'firebase/firestore'
 import { dbStore } from '../configFirebase'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 const ContainerForm = styled.section`
     margin: 1rem 3rem;
@@ -49,6 +50,9 @@ export default function RegisterBook() {
         handleSubmit
     } = useForm()
 
+    //utilizamos el hook para redigirirnos a otros componentes
+    const navigate = useNavigate()
+
     //metodo para guardar el libro
     //async = asincrono
     //funcion asincronica
@@ -66,6 +70,9 @@ export default function RegisterBook() {
                 showConfirmButton: false,
                 timer: 1500
             });
+
+            //cuando el libro se guarde nos redigirimos a la lista de libros
+            navigate("/libro/lista")
         }catch(error){
             console.log("Error al guadar el libro", error)
         }

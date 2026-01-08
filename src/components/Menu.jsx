@@ -60,7 +60,8 @@ export default function Menu() {
                 <Route path='/' element={<Home />} />
                 <Route path='/libro/lista' element={<ListBooks /> } />
                 <Route path='/libro/registro' element={<RegisterBook />} />
-                <Route path='/libro/editar' element={<EditBook />} />
+                {/** agregando ruta con parametros */}
+                <Route path='/libro/editar/:id_book' element={<EditBook />} />
                 
             </Routes>
         </BrowserRouter>
